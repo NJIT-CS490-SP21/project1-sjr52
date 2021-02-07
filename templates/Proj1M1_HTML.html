@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunny's Music App</title>
+    <link href={{ url_for('static', filename='Proj1_CSS_M1.css')}} rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Video BackGround Start -->
+    <div id="Background-wrapper">
+      <video
+        id="Background-Video"
+        autoplay="true"
+        muted="true"
+        loop="true"
+        src="https://res.cloudinary.com/ddsomtotk/video/upload/v1612646256/Background_1_mg3jot.mp4"
+        type="video/mp4"
+      ></video>
+      <div id="Background-Overlay"></div>
+      <!-- Adding left and right wing pics Start-->
+      <div id="Left_Wing">
+        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612646258/LeftWing_Pic_vtqaxh.png" alt="Left_Wing" />
+      </div>
+      <div id="Right_Wing">
+        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612646261/RightWing_Pic1_kphpyt.png" alt="Right_Wing" />
+      </div>
+      <!-- Adding left and right wing pics End-->
+      <!-- Adding Crown pic start-->
+      <div id="Crown_Pic">
+        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612646264/TryCrownPic2_tbxgpe.png" alt="Crown" />
+      </div>
+      <!-- Adding Crown pic End-->
+    </div>
+    <!-- Video BackGround End -->
+    <div id="Glass_Player_Wrapper">
+      <div id="Content">
+        <!-- Artist Pic Section Start -->
+        <div id="Artist_Pic_Wrapper">
+          <div id="Tri_1"></div>
+          <div id="Tri_2"></div>
+          <div id="Tri_3"></div>
+          <div id="Tri_4"></div>
+        </div>
+        <a href="#Link To Artist">
+          <!--HHHHHHEEEERREEEE-->
+          <!--<img id="Artist_Pic" src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612646262/The_Weekend_lbaicj.jpg" alt="Artist" />-->
+        </a>
+        <!-- Artist Pic Section End -->
+        <!-- Artist Info Section Start -->
+        <div id="Artist_Info_Section">
+          <div id="Artist_Name"></div>
+          <div id="Artist_Album_Song"></div>
+          <div id="Artist_Lyrics"></div>
+        </div>
+        <!-- Artist Info Section End -->
+      </div>
+      <!-- Media Player Start -->
+      <div id="Player_Area"></div>
+      <!-- Media Player End -->
+    </div>
+  </body>
+</html>

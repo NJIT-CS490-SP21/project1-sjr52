@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+======================
+Background Video Start
+======================
+*/
+
+#Background-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#Background-Video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/*
+======================
+Background Video End
+======================
+*/
+
+/*
+======================
+Wings Section Start
+======================
+*/
+
+#Crown_Pic img {
+  visibility: hidden;
+}
+
+#Left_Wing,
+#Right_Wing {
+  transform: scale(2);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+@media screen and (max-width: 1870px) {
+  #Left_Wing {
+    visibility: hidden;
+  }
+  #Right_Wing {
+    visibility: hidden;
+  }
+
+  #Crown_Pic img {
+    visibility: visible;
+    width: 225px;
+    position: absolute;
+    top: 18%;
+    left: 42%;
+  }
+}
+@media screen and (min-width: 1878px) {
+  #Left_Wing {
+    position: absolute;
+    top: 35%;
+    left: 31.5%;
+    transform:scale(2);
+  }
+
+  #Right_Wing {
+    position: absolute;
+    top: 35%;
+    left: 61.5%;
+    transform:scale(2);
+  }
+  #Crown_Pic img {
+    visibility: visible;
+    width: 225px;
+    position: absolute;
+    top: 18%;
+    left: 46%;
+    
+  }
+}
+
+/*
+======================
+Wings Section End
+======================
+*/
+
+/*
+======================
+Center Player Area Start
+======================
+*/
+
+#Glass_Player_Wrapper {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  z-index: 2;
+}
+#Artist_Pic:hover {
+  filter: drop-shadow(10px 10px 12px gold);
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+}
+
+/*
+======================
+Artist Pic Section Start
+======================
+*/
+
+#Tri_1 {
+  top: 11.5%;
+  left: 35.9%;
+}
+#Tri_2 {
+ top: 11.5%;
+ left: 42.4%;
+ transform: rotate(180deg);
+}
+#Tri_3 {
+  top: 11.5%;
+  left: 48.9%;
+}
+
+#Tri_4 {
+  top: 21%;
+  left: 35.5%;
+  transform: translate(-50%, -50%);
+  transform: rotate(180deg);
+}
+
+#Tri_1,
+#Tri_2,
+#Tri_3 {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 47px solid transparent;
+  border-right: 47px solid transparent;
+  border-bottom: 60px solid #1976d2;
+  opacity: 0.6;
+}
+
+#Tri_4 {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 95px solid transparent;
+  border-right: 95px solid transparent;
+  border-bottom: 100px solid #0d47a1;
+  opacity: 0.7;
+}
+
+img {
+  top: 10.5%;
+  left: 38%;
+  position: absolute;
+  width: 110px;
+  height: 125px;
+  opacity: 0.8;
+  z-index: 3;
+}
+
+/*
+======================
+Artist Pic Section End
+======================
+*/
+
+/*
+==================================
+Artist And Song Info Section Start
+==================================
+*/
+
+#Artist_Name,
+#Artist_Lyrics {
+  position: absolute;
+  width: 125px;
+  height: 75px;
+  background: rgb(226, 194, 8);
+  opacity: 0.5;
+}
+
+#Artist_Album_Song {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background: rgb(226, 194, 8);
+  opacity: 0.5;
+}
+
+#Artist_Name {
+  bottom: 60%;
+  left: 10%;
+  transform: skew(40deg);
+  z-index: 0;
+}
+
+#Artist_Album_Song {
+  top: 2%;
+  left: 38.5%;
+  z-index: 0;
+}
+
+#Artist_Lyrics {
+  bottom: 60%;
+  left: 69%;
+  transform: rotate(180deg);
+  transform: skew(-40deg);
+  z-index: 0;
+}
+
+/*
+==================================
+Artist And Song Info Section Start
+==================================
+*/
+
+/*
+======================
+Media Player Area Start
+======================
+*/
+
+/*
+======================
+Media Player Area End
+======================
+*/
+
+#Player_Area {
+  background-color: rgb(221, 157, 39);
+  position: absolute;
+  bottom: 20.5%;
+  left: 27.5%;
+  width: 300px;
+  height: 250px;
+  border: 3px solid black;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+/*
+======================
+Center Player Area End
+======================
+*/

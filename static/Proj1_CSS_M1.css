@@ -4,12 +4,14 @@
   box-sizing: border-box;
 }
 
+/*=========================================================================BACKGROUND SECTION - START================================================================================================*/
 /*
 ======================
-Background Video Start
+Background Video Section
 ======================
 */
 
+/*Background Div Start*/
 #Background-wrapper {
   height: 100%;
   width: 100%;
@@ -18,7 +20,9 @@ Background Video Start
   left: 0;
   overflow: hidden;
 }
+/*Background Div End*/
 
+/*Background Video Start*/
 #Background-Video {
   position: absolute;
   top: 50%;
@@ -27,13 +31,16 @@ Background Video Start
   min-width: 100%;
   min-height: 100%;
   overflow: hidden;
+  z-index:0;
 }
+/*Background Video End*/
 
 /*
 ======================
-Background Video End
+Background Video Section End
 ======================
 */
+
 
 /*
 ======================
@@ -41,22 +48,19 @@ Wings Section Start
 ======================
 */
 
-#Crown_Pic img {
-  visibility: hidden;
-}
-
-#Left_Wing,
-#Right_Wing {
+#Left_GL,
+#Right_GL {
   transform: scale(2);
-  opacity: 0.9;
-  z-index: 0;
+  opacity: 1;
+  z-index: 1;
+  filter: brightness(100%);
 }
 
 @media screen and (max-width: 1870px) {
-  #Left_Wing {
+  #Left_GL {
     visibility: hidden;
   }
-  #Right_Wing {
+  #Right_GL {
     visibility: hidden;
   }
 
@@ -64,31 +68,34 @@ Wings Section Start
     visibility: visible;
     width: 225px;
     position: absolute;
-    top: 18%;
+    top: 6%;
     left: 42%;
+    filter: drop-shadow(0px 10px 12px gold);
   }
 }
 @media screen and (min-width: 1878px) {
-  #Left_Wing {
+  #Left_GL {
     position: absolute;
-    top: 35%;
-    left: 31.5%;
-    transform:scale(2);
+    top: 39%;
+    left: 27%;
+    transform:scale(2,3);
+    filter: drop-shadow(10px 10px 12px gold);
   }
 
-  #Right_Wing {
+  #Right_GL {
     position: absolute;
-    top: 35%;
-    left: 61.5%;
-    transform:scale(2);
+    top: 39%;
+    left: 67%;
+    transform:scale(2,3);
+    filter: drop-shadow(10px 10px 12px gold);
   }
   #Crown_Pic img {
     visibility: visible;
-    width: 225px;
+    width:300px;
     position: absolute;
-    top: 18%;
-    left: 46%;
-    
+    top: 3%;
+    left: 44.5%;
+    filter: drop-shadow(0px 10px 12px gold);
   }
 }
 
@@ -98,10 +105,14 @@ Wings Section End
 ======================
 */
 
+/*=========================================================================BACKGROUND SECTION - END================================================================================================*/
+
+
+
 /*
-======================
-Center Player Area Start
-======================
+=========================
+Glass Panel Start
+=========================
 */
 
 #Glass_Player_Wrapper {
@@ -109,41 +120,41 @@ Center Player Area Start
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  width: 700px;
-  height: 700px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 800px;
+  height: 900px;
+  background: linear-gradient(rgb(183, 9, 76),rgb(160, 26, 88),rgb(137, 43, 100),rgb(114, 60, 112),rgb(92, 77, 125),rgb(69, 94, 137),rgb(69, 94, 137),rgb(23, 128, 161),rgb(0, 145, 173));
   border-radius: 10px;
-  z-index: 2;
+  z-index: 1;
 }
-#Artist_Pic:hover {
-  filter: drop-shadow(10px 10px 12px gold);
-  transform: scale(1.2, 1.2);
-  cursor: pointer;
-}
+/*background: rgba(255, 255, 255, 0.2);
+=========================
+Glass Panel End
+=========================
+*/
 
 /*
 ======================
-Artist Pic Section Start
+Creating Diamond Start
 ======================
 */
 
 #Tri_1 {
-  top: 11.5%;
-  left: 35.9%;
+  top: 10.5%;
+  left: 32%;
 }
 #Tri_2 {
- top: 11.5%;
- left: 42.4%;
+ top: 10.5%;
+ left: 40.5%;
  transform: rotate(180deg);
 }
 #Tri_3 {
-  top: 11.5%;
-  left: 48.9%;
+  top: 10.5%;
+  left: 49%;
 }
 
 #Tri_4 {
-  top: 21%;
-  left: 35.5%;
+  top: 19.5%;
+  left: 33%;
   transform: translate(-50%, -50%);
   transform: rotate(180deg);
 }
@@ -154,29 +165,47 @@ Artist Pic Section Start
   width: 0;
   height: 0;
   position: absolute;
-  border-left: 47px solid transparent;
-  border-right: 47px solid transparent;
-  border-bottom: 60px solid #1976d2;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 75px solid gold;
   opacity: 0.6;
+  filter: drop-shadow(10px 10px 12px gold);
 }
 
 #Tri_4 {
   width: 0;
   height: 0;
   position: absolute;
-  border-left: 95px solid transparent;
-  border-right: 95px solid transparent;
-  border-bottom: 100px solid #0d47a1;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 135px solid gold;
   opacity: 0.7;
+  filter: drop-shadow(10px 10px 12px gold);
 }
 
-img {
-  top: 10.5%;
-  left: 38%;
+/*
+======================
+Creating Diamond End
+======================
+*/
+
+
+/*=========================================================================ARTIST INFO SECTION - START================================================================================================*/
+
+/*
+=========================
+Artist Pic Section Start
+=========================
+*/
+
+#Artist_Pic {
+  top: 11%;
+  left: 38.5%;
   position: absolute;
-  width: 110px;
-  height: 125px;
-  opacity: 0.8;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border: 4px solid black;
   z-index: 3;
 }
 
@@ -186,82 +215,132 @@ Artist Pic Section End
 ======================
 */
 
+
 /*
-==================================
-Artist And Song Info Section Start
-==================================
+=============================
+Artist-Img Hover Effect Start
+=============================
+*/
+#Artist_Pic:hover {
+  filter: drop-shadow(10px 10px 12px yellow);
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+  border-radius:50%;
+  transition: 0.5s;
+}
+
+
+/*
+=============================
+Artist-Img Hover Effect Start
+=============================
 */
 
-#Artist_Name,
-#Artist_Lyrics {
-  position: absolute;
-  width: 125px;
-  height: 75px;
-  background: rgb(226, 194, 8);
-  opacity: 0.5;
-}
+/*
+=============================
+Artist-Name Display Area Start
+=============================
+*/
 
-#Artist_Album_Song {
-  position: absolute;
-  width: 150px;
-  height: 40px;
-  background: rgb(226, 194, 8);
-  opacity: 0.5;
-}
 
 #Artist_Name {
-  bottom: 60%;
-  left: 10%;
-  transform: skew(40deg);
-  z-index: 0;
-}
-
-#Artist_Album_Song {
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  background: hsl(211, 39%, 23%);
+  color:gold;
+  opacity: 1;
+  text-align:center;
+  font-size:35px;
+  font-weight: bold;
   top: 2%;
-  left: 38.5%;
-  z-index: 0;
+  left: 33%;
+  z-index: 1;
+  border: 4px solid black;
+  
 }
 
-#Artist_Lyrics {
-  bottom: 60%;
-  left: 69%;
-  transform: rotate(180deg);
-  transform: skew(-40deg);
-  z-index: 0;
+#Artist_Name:hover{
+  transition:.5s;
+  transform:scale(1.2);
+  
 }
-
 /*
-==================================
-Artist And Song Info Section Start
-==================================
+=============================
+Artist-Name Display Area Start
+=============================
 */
 
-/*
-======================
-Media Player Area Start
-======================
-*/
+/*=========================================================================ARTIST INFO SECTION - END===============================================================================================================*/
 
-/*
-======================
-Media Player Area End
-======================
-*/
-
-#Player_Area {
+/*=========================================================================TRACK NAME AND ALBUM PIC SECTION - START================================================================================================*/
+#Album_Pic_Area{
   background-color: rgb(221, 157, 39);
   position: absolute;
-  bottom: 20.5%;
-  left: 27.5%;
-  width: 300px;
-  height: 250px;
+  bottom: 20%;
+  left: 23%;
+  width: 400px;
+  height: 350px;
   border: 3px solid black;
   border-radius: 5px;
-  opacity: 0.5;
+  opacity: 1;
 }
 
-/*
-======================
-Center Player Area End
-======================
-*/
+
+#Album_Pic{
+  object-fit:fill;
+  width:400px;
+  height:345px;
+  border: 5px solid gold;
+  filter: brightness(125%);
+}
+
+/*DISPLAYING TRACK NAME WHEN HOVERING ON ALBUM PIC - Start*/
+#Track_Name{
+  visibility: hidden;
+  
+}
+
+#Album_Pic_Area:hover #Track_Name {
+  position:absolute;
+  display:block;
+  visibility: visible;
+  top:78%;
+  left:2%;
+  font-size:28px;
+  font-weight:bold;
+  background: hsl(211, 39%, 23%);
+  color:gold;
+  transition-duration: 0.5s;
+  text-align:center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+/*DISPLAYING TRACK NAME WHEN HOVERING ON ALBUM PIC - END*/
+
+/*=========================================================================TRACK NAME AND ALBUM PIC SECTION - End================================================================================================*/
+
+
+/*MUSIC PLAYER AREA-START*/
+#Music_Panel_Area{
+   position:absolute;
+   bottom:4%;
+   left:27%;
+   width:325px;
+   height: 110px;
+   background: linear-gradient(rgb(255, 136, 0),rgb(255, 162, 0),rgb(255, 183, 0),rgb(255, 221, 0),rgb(255, 234, 0));
+   border-radius:25%;
+   filter: drop-shadow(0px 10px 10px yellow);
+}
+  
+
+
+audio{
+  position: absolute;
+  bottom:7%;
+  left:28.5%;
+  
+}
+/*MUSIC PLAYER AREA- END*/
+
+

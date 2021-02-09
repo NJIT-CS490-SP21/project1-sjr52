@@ -245,7 +245,7 @@ Artist-Name Display Area Start
 
 #Artist_Name {
   position: absolute;
-  width: 250px;
+  width: 300px;
   height: 50px;
   background: hsl(211, 39%, 23%);
   color:gold;
@@ -254,9 +254,10 @@ Artist-Name Display Area Start
   font-size:35px;
   font-weight: bold;
   top: 2%;
-  left: 33%;
+  left: 31%;
   z-index: 1;
   border: 4px solid black;
+  text-transform: uppercase;
   
 }
 
@@ -303,10 +304,12 @@ Artist-Name Display Area Start
 
 #Album_Pic_Area:hover #Track_Name {
   position:absolute;
-  display:block;
+  display:inline-block;
   visibility: visible;
-  top:78%;
-  left:2%;
+  width: 387px;
+  height:63px;
+  top:80%;
+  left: 1.5%;
   font-size:28px;
   font-weight:bold;
   background: hsl(211, 39%, 23%);
@@ -315,6 +318,8 @@ Artist-Name Display Area Start
   text-align:center;
   text-transform: uppercase;
   text-decoration: underline;
+  border: 4px solid black;
+  overflow:hidden;
 }
 /*DISPLAYING TRACK NAME WHEN HOVERING ON ALBUM PIC - END*/
 
@@ -343,4 +348,34 @@ audio{
 }
 /*MUSIC PLAYER AREA- END*/
 
+/*Fire_Area - Start*/
 
+#Fire_LT_Wrapper{
+  position:absolute;
+  top:25%;
+  left:-70px;
+  filter: drop-shadow(0px 10px 10px yellow);
+}
+
+#Fire_RT_Wrapper{
+  position:absolute;
+  top:25%;
+  left:560px;
+  filter: drop-shadow(0px 10px 10px yellow);
+}
+
+#Fire_LB_Wrapper{
+  position:absolute;
+  top:65%;
+  left:-70px;
+  filter: drop-shadow(0px 10px 10px yellow);
+}
+
+#Fire_RB_Wrapper{
+  position:absolute;
+  top:65%;
+  left:560px;
+  filter: drop-shadow(0px 10px 10px yellow);
+}
+
+/*Fire_Area - END*/

@@ -96,7 +96,7 @@ Track_Preview_Picked=Final_Data['tracks'][Pick_Rand_Track]['preview_url']       
 #===============================================================================================================================================================
 
 
-#========================GENIUS:Setting up Info For GET Request=================================================================================================
+#========================GENIUS:Setting up query and params for Sending GET Request=================================================================================================
 Genius_Token = os.getenv('Genius_Token')                                                                                                                      #|
                                                                                                                                                               #|
 Genius_GET_URL='https://api.genius.com/search'                                                                                                                #|
@@ -116,7 +116,8 @@ try:                                                                            
     Track_Lyrics_Link = Genius_Data['response']['hits'][0]['result']['url']                                                                                   #|
     Track_Lyrics_Check=True                                                                                                                                   #|
 except (IndexError):                                                                                                                                          #|
-    Track_Lyrics_Link = "Lyrics Link Not Able"                                                                                                                #|                                                                                                                                 #|
+    Track_Lyrics_Link = "Lyrics_Link_Not_Able"                                                                                                                #|
+    Track_Lyrics_Check=True                                                                                                                                   #|
                                                                                                                                                               #|
 #===============================================================================================================================================================
 

@@ -11,10 +11,10 @@ from dotenv import load_dotenv, find_dotenv
 #=====================Exporting .env File=====================================
 #Locating and Loading .env:                                                 #|    
 load_dotenv(find_dotenv())                                                  #|
-#==============================================================================
+#=============================================================================
 
 
-#=====================Auth Section and POST Request==================================================================================
+#=====================Spotify:Auth Section and POST Request==========================================================================
 #Setting Up the Authentication to obtain the Access Token with Post Method:                                                        #|
 Auth_URL = 'https://accounts.spotify.com/api/token'  #//Base url to obtain token                                                   #|
                                                                                                                                    #|
@@ -33,9 +33,9 @@ Access_Token = Auth_Response.json()['access_token']   #//Taking the response and
                                                                                                                                    #|
 #print(Access_Token)  #// Printing out the token to be used by the user for access                                                 #|
                                                                                                                                    #|
-#==================================================================================================================================#|
+#====================================================================================================================================
 
-#========================Setting up Info For GET Request==================================================================================================================#|
+#========================Spotify:Setting up Info For GET Request============================================================================================================
 #HardCoded Artist Name and ID                                                                                                                                             #|
 Artist_Name=['Marshmello','The Weeknd','Zack Knight','Coldplay','Juice WRLD','Travis Scott']                                                                              #|
 Artist_Pics=['https://res.cloudinary.com/ddsomtotk/image/upload/v1612675306/MM_Pic1_zmw0h0.png',                                                                          #|
@@ -59,19 +59,19 @@ GET_URL = 'https://api.spotify.com/v1/artists/{ID_OF_Artist}'.format(ID_OF_Artis
                                                                                                                                                                           #|
 #Query for top tracks of the artist:                                                                                                                                      #|
 GET_Query = '/top-tracks?market=US&limit=10'                                                                                                                              #|
-#=========================================================================================================================================================================#|
+#===========================================================================================================================================================================
 
 
-#=========================Sending the GET Request and Recieving the Response==================================================================================#|
+#=========================Spotify:Sending the GET Request and Recieving the Response============================================================================
                                                                                                                                                               #|
 GET_Response_Data = requests.get(GET_URL+GET_Query, headers=GET_Header)                                                                                       #|
 Final_Data = GET_Response_Data.json()                                                                                                                         #|
                                                                                                                                                               #|
                                                                                                                                                               #|
-#=============================================================================================================================================================#|     
+#===============================================================================================================================================================     
 
 
-#======================Extracting the info From Response======================================================================================================#|
+#======================Spotify:Extracting the info From Response================================================================================================
 #Picking Random Track:                                                                                                                                        #|
 Pick_Rand_Track=randint(0,9)                                                                                                                                  #|
                                                                                                                                                               #|
@@ -82,7 +82,9 @@ Artist_Name_Picked=Artist_Name[rand_idx]                                        
 Artist_Pic_Picked=Artist_Pics[rand_idx]                                                                                                                       #|
                                                                                                                                                               #|
 #Getting Track Name:                                                                                                                                          #|
-Track_Name_Picked=Final_Data['tracks'][Pick_Rand_Track]['name']                                                                                               #|
+Track_Name=Final_Data['tracks'][Pick_Rand_Track]['name']                                                                                                      #|
+Track_Name_Modify=Track_Name.split('(')                                                                                                                       #|
+Track_Name_Picked=Track_Name_Modify[0]                                                                                                                        #|                                                                                                                                    
                                                                                                                                                               #|
 #Getting Album Pic:                                                                                                                                           #|
 Album_Pic_Picked=Final_Data['tracks'][Pick_Rand_Track]['album']['images'][0]['url']                                                                           #|
@@ -90,15 +92,42 @@ Album_Pic_Picked=Final_Data['tracks'][Pick_Rand_Track]['album']['images'][0]['ur
 #Getting Album Preview_URL:                                                                                                                                   #|
 Track_Preview_Picked=Final_Data['tracks'][Pick_Rand_Track]['preview_url']                                                                                     #|
                                                                                                                                                               #|
-#=============================================================================================================================================================#|
+                                                                                                                                                              #|                                                                                                      
+#===============================================================================================================================================================
 
-#==================Creating FLASK=============================================================================================================================#|
+
+#========================GENIUS:Setting up Info For GET Request=================================================================================================
+Genius_Token = os.getenv('Genius_Token')                                                                                                                      #|
+                                                                                                                                                              #|
+Genius_GET_URL='https://api.genius.com/search'                                                                                                                #|
+                                                                                                                                                              #|
+Genius_GET_Header = {                                                                                                                                         #|                                                          
+      'Authorization': 'Bearer {genius_token}'.format(genius_token=Genius_Token)                                                                              #|                                          
+}                                                                                                                                                             #|
+Genius_Params =  {                                                                                                                                            #|             
+         'q': Track_Name_Picked + ' ' + Artist_Name_Picked                                                                                                    #|
+}                                                                                                                                                             #|
+                                                                                                                                                              #|
+Genius_GET_Response_Data = requests.get(Genius_GET_URL, data=Genius_Params, headers=Genius_GET_Header)                                                        #|
+                                                                                                                                                              #|
+Genius_Data=Genius_GET_Response_Data.json()                                                                                                                   #|
+                                                                                                                                                              #|
+try:                                                                                                                                                          #|
+    Track_Lyrics_Link = Genius_Data['response']['hits'][0]['result']['url']                                                                                   #|
+    Track_Lyrics_Check=True                                                                                                                                   #|
+except (IndexError):                                                                                                                                          #|
+    Track_Lyrics_Link = "Lyrics Link Not Able"                                                                                                                #|                                                                                                                                 #|
+                                                                                                                                                              #|
+#===============================================================================================================================================================
+
+
+#==================Creating FLASK===============================================================================================================================
 app = Flask(__name__)   #//instance of flask named app                                                                                                        #|
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0                                                                                                                   #|
 @app.route('/')         #//End point to load the webpage                                                                                                      #|
-#=============================================================================================================================================================#|                                                                                        
+#===============================================================================================================================================================                                                                                       
 
-#===================Display Content Section(HTML AND CSS)================================================#|
+#===================Display Content Section(HTML AND CSS)==================================================
 def Display_Content():                                                                                   #|
                                                                                                          #|
     return render_template(                                                                              #|
@@ -108,13 +137,14 @@ def Display_Content():                                                          
         Track_Name_Picked=Track_Name_Picked,                                                             #|
         Album_Pic_Picked=Album_Pic_Picked,                                                               #|
         Track_Preview_Picked=Track_Preview_Picked,                                                       #|
+        Track_Lyrics_Check=Track_Lyrics_Check,                                                           #|
+        Track_Lyrics_Link=Track_Lyrics_Link                                                              #|
     )                                                                                                    #|
-#========================================================================================================#|
-#==================Running the webpage on a specific port and ip addresss===========#|
+#==========================================================================================================
+#==================Running the webpage on a specific port and ip addresss=============
 app.run(                                                                            #|
 port=int(os.getenv('PORT', 8080)),                                                  #|
 host=os.getenv('IP','0.0.0.0'),                                                     #|
 debug=True                                                                          #|
 )                                                                                   #|
-#===================================================================================#|
-    
+#=====================================================================================

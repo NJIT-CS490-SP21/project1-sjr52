@@ -160,7 +160,7 @@
      __Improving the Project in the Future:__
      -Will try to make project more interactive by adding JavaScript.
      
-     -Allow users to select their favorite artist and track and load that based onto the webpage.
+     -Allow users to select their favorite artist and track and load that onto the webpage.
     
             
         

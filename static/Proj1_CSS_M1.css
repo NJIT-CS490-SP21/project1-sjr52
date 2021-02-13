@@ -307,8 +307,8 @@ Artist-Name Display Area Start
   display:inline-block;
   visibility: visible;
   width: 387px;
-  height:63px;
-  top:80%;
+  height:67px;
+  top:78%;
   left: 1.5%;
   font-size:28px;
   font-weight:bold;
@@ -379,3 +379,17 @@ audio{
 }
 
 /*Fire_Area - END*/
+
+/*Lyrics_Area - START*/
+#Lyrics_Link{
+  position: absolute;
+  top: 69%;
+  left: 48%;
+  letter-spacing:2px;
+  background:red;
+  z-index: 4;
+  font-size:15px;  
+  text-decoration: none;
+  text-transform:uppercase;
+  
+}

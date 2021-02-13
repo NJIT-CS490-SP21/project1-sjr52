@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sunny's Music App</title>
-    <link href={{ url_for('static', filename='Proj1_CSS_M1.css')}} rel="stylesheet" />
+    <link href={{url_for('static', filename='Proj1_CSS_M1.css')}} rel="stylesheet" />
   </head>
  
 <!--=====================BODY SECTION================-->
@@ -73,7 +73,6 @@
         
       </div>
     
-    
       <!-- Track Pic and name -->
       <div id="Album_Pic_Area">
         <div id="Albm_pic_name">
@@ -105,9 +104,19 @@
      <div id="Fire_RB_Wrapper">
        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612802629/FireBurn-Pic-uvz5ud-unscreen_fvktbd.gif" id="RB_Fire" alt="Right_Bottom_Fire" height="250px" width="300px"></img>
      </div>
-      
-    <!--====================================================Fire SECTION - END ===============================================================================================-->
+   <!--====================================================Fire SECTION - END ===============================================================================================-->
     </div>
   <!--====================================================CENTRAL WRAPPER SECTION - END ===============================================================================================-->
+  <!--====================================================Display Lyrics SECTION - START ===============================================================================================-->
+   <!--<a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics</a>   -->
+   
+   {% if Track_Lyrics_Check %}
+      <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics!</a>  
+   {% else %}
+      <a href='#{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics Not Able!</a> 
+   {% endif %}
+   
+   
+  <!--====================================================Display Lyrics SECTION - END ===============================================================================================-->
   </body>
 </html>

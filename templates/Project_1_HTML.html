@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--=====================HEADER SECTION================-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sunny's Music App</title>
+    <link href={{url_for('static', filename='Project_1_CSS.css')}} rel="stylesheet" />
+  </head>
+ 
+<!--=====================BODY SECTION================-->
+  <body>
+    
+  <!--====================================================BACKGROUND AND GOLDEN LAUREL SECTION - START ===============================================================================================-->
+    <!-- Video BackGround Start -->
+    <div id="Background-wrapper">
+      
+      <video
+        id="Background-Video"
+        autoplay="true"
+        muted="true"
+        loop="true"
+        src="https://res.cloudinary.com/ddsomtotk/video/upload/v1612646256/Background_1_mg3jot.mp4"
+        type="video/mp4"
+      ></video>
+     <!-- Video BackGround END -->
+     
+     <!-- Adding left and right golden laurel pics Start-->
+      <div id="Left_GL">
+        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612726015/Golden_LeafL1-removebg-preview_y7olhe.png" alt="Left_GL" />
+      </div>
+      
+      <div id="Right_GL">
+        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612726017/Golden_LeafR1-removebg-preview_eu2t8a.png" alt="Right_GL" />
+      </div>
+      <!-- Adding left and right golden laurel pics End-->
+      
+      <!-- Adding Crown pic start-->
+      <div id="Crown_Pic">
+        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612646264/TryCrownPic2_tbxgpe.png" alt="Crown" />
+      </div>
+      <!-- Adding Crown pic End-->
+      
+    </div>
+    <!-- Video BackGround End -->
+    
+    <!--====================================================BACKGROUND AND GOLDEN LAUREL SECTION - END ===============================================================================================-->
+    
+    <!--====================================================CENTRAL WRAPPER SECTION - START ===============================================================================================-->
+    <!--Creating a Glass Panel to display content-->
+    <div id="Glass_Player_Wrapper">
+      
+      <!-- Creating the Diamond Shape with triangles -->
+      <div id="Content">
+        <div id="Artist_Pic_Wrapper">
+          <div id="Tri_1"></div>
+          <div id="Tri_2"></div>
+          <div id="Tri_3"></div>
+          <div id="Tri_4"></div>
+        </div>
+        
+        <!-- Artist Pic -->
+        <a href="#Link To Artist">
+          <img id="Artist_Pic" src='{{Artist_Pic_Picked}}' alt="Artist" />
+        </a>
+        <!-- Artist Pic-->
+        
+        
+        <!-- Artist Name -->
+        <div id="Artist_Info_Section">
+          <div id="Artist_Name">{{Artist_Name_Picked}}</div>
+        </div>
+        <!-- Artist Name -->
+        
+      </div>
+    
+      <!-- Track Pic and name -->
+      <div id="Album_Pic_Area">
+        <div id="Albm_pic_name">
+          <img id="Album_Pic" src='{{Album_Pic_Picked}}'  alt="Album Photo" />
+          <div id="Track_Name">{{Track_Name_Picked}}</div>
+        </div>
+      </div>
+      <!-- Track Pic and name -->
+      
+    <!--====================================================AUDIO WRAPPER SECTION - START ===============================================================================================-->
+       <div id='Music_Panel_Area'></div>
+       
+      <!-- Audio Player -->
+      <audio controls>
+        <source src="{{Track_Preview_Picked}}" type="audio/mpeg">
+      </audio>
+      <!-- Audio Player -->
+      
+   <!--====================================================AUDIO WRAPPER SECTION - End ===============================================================================================-->
+   
+   <!--====================================================Fire SECTION - Start ===============================================================================================-->
+      <div id="Fire_LT_Wrapper">
+       <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612802629/FireBurn-Pic-uvz5ud-unscreen_fvktbd.gif" id="LT_Fire" alt="Left_Top_Fire" height="250px" width="300px"></img>
+     </div>
+     <div id="Fire_LB_Wrapper">
+       <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612802629/FireBurn-Pic-uvz5ud-unscreen_fvktbd.gif" id="LB_Fire" alt="Left_Bottom_Fire" height="250px" width="300px"></img>
+     </div>
+          <div id="Fire_RT_Wrapper">
+       <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612802629/FireBurn-Pic-uvz5ud-unscreen_fvktbd.gif" id="RT_Fire" alt="Right_Top_Fire" height="250px" width="300px"></img>
+     </div>
+     <div id="Fire_RB_Wrapper">
+       <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612802629/FireBurn-Pic-uvz5ud-unscreen_fvktbd.gif" id="RB_Fire" alt="Right_Bottom_Fire" height="250px" width="300px"></img>
+     </div>
+   <!--====================================================Fire SECTION - END ===============================================================================================-->
+    </div>
+  <!--====================================================CENTRAL WRAPPER SECTION - END ===============================================================================================-->
+  
+  <!--====================================================Display Lyrics SECTION - START ===============================================================================================-->
+
+   {% if Track_Lyrics_Check %}
+      <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics!</a>        <!--if lyrics link able display it -->
+   {% else %}
+      <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics Not Able!</a>  <!--if lyrics link not able display dummy link -->
+   {% endif %}
+   
+  <!--====================================================Display Lyrics SECTION - END ===============================================================================================-->
+  </body>
+</html>
+

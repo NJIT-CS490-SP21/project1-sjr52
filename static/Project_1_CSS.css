@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 /*=========================================================================BACKGROUND SECTION - START================================================================================================*/
 /*
 ======================
@@ -58,10 +59,10 @@ Wings Section Start
 
 @media screen and (max-width: 1870px) {
   #Left_GL {
-    visibility: hidden;
+    visibility: visible;
   }
   #Right_GL {
-    visibility: hidden;
+    visibility: visible;
   }
 
   #Crown_Pic img {
@@ -69,12 +70,25 @@ Wings Section Start
     width: 300px;
     position: absolute;
     top: 4.5%;
-    left: 39%;
+    left: 40%;
     filter: drop-shadow(0px 10px 12px gold);
   }
   
+  #Lyrics_Link{
+  position: absolute;
+  top: 69%;
+  left: 48%;
+  letter-spacing:2px;
+  background:red;
+  z-index: 4;
+  font-size:15px;  
+  text-decoration: none;
+  text-transform:uppercase;
+  
+  }
 }
-
+  
+  
 @media screen and (min-width: 1878px) {
   #Left_GL {
     position: absolute;

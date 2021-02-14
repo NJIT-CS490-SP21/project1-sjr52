@@ -3,13 +3,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sunny's Music App</title>
     <link href={{url_for('static', filename='Project_1_CSS.css')}} rel="stylesheet" />
   </head>
  
 <!--=====================BODY SECTION================-->
-  <body onload="zoom()">
+  <body>
     
   <!--====================================================BACKGROUND AND GOLDEN LAUREL SECTION - START ===============================================================================================-->
     <!-- Video BackGround Start -->
@@ -43,7 +43,6 @@
       
     </div>
     <!-- Video BackGround End -->
-    
     <!--====================================================BACKGROUND AND GOLDEN LAUREL SECTION - END ===============================================================================================-->
     
     <!--====================================================CENTRAL WRAPPER SECTION - START ===============================================================================================-->
@@ -85,7 +84,6 @@
       
     <!--====================================================AUDIO WRAPPER SECTION - START ===============================================================================================-->
        <div id='Music_Panel_Area'></div>
-       
       <!-- Audio Player -->
       <audio controls>
         <source src="{{Track_Preview_Picked}}" type="audio/mpeg">
@@ -93,7 +91,6 @@
       <!-- Audio Player -->
       
    <!--====================================================AUDIO WRAPPER SECTION - End ===============================================================================================-->
-   
    <!--====================================================Fire SECTION - Start ===============================================================================================-->
       <div id="Fire_LT_Wrapper">
        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612802629/FireBurn-Pic-uvz5ud-unscreen_fvktbd.gif" id="LT_Fire" alt="Left_Top_Fire" height="250px" width="300px"></img>
@@ -110,21 +107,16 @@
    <!--====================================================Fire SECTION - END ===============================================================================================-->
     </div>
   <!--====================================================CENTRAL WRAPPER SECTION - END ===============================================================================================-->
-  
   <!--====================================================Display Lyrics SECTION - START ===============================================================================================-->
-
+   <!--<a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics</a>   -->
+   
    {% if Track_Lyrics_Check %}
-      <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics!</a>        <!--if lyrics link able display it -->
+      <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics!</a>  
    {% else %}
-      <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics Not Able!</a>  <!--if lyrics link not able display dummy link -->
+      <a href='#{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics Not Able!</a> 
    {% endif %}
+   
    
   <!--====================================================Display Lyrics SECTION - END ===============================================================================================-->
   </body>
 </html>
-
-<script type="text/javascript">
-        function zoom() {
-            document.body.style.zoom = "67%" 
-        }
-</script>

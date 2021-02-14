@@ -66,13 +66,15 @@ Wings Section Start
 
   #Crown_Pic img {
     visibility: visible;
-    width: 225px;
+    width: 300px;
     position: absolute;
-    top: 6%;
-    left: 42%;
+    top: 4.5%;
+    left: 39%;
     filter: drop-shadow(0px 10px 12px gold);
   }
+  
 }
+
 @media screen and (min-width: 1878px) {
   #Left_GL {
     position: absolute;

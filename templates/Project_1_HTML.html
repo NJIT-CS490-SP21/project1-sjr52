@@ -3,13 +3,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunny's Music App</title>
     <link href={{url_for('static', filename='Project_1_CSS.css')}} rel="stylesheet" />
   </head>
  
 <!--=====================BODY SECTION================-->
-  <body>
+  <body onload="zoom()">
     
   <!--====================================================BACKGROUND AND GOLDEN LAUREL SECTION - START ===============================================================================================-->
     <!-- Video BackGround Start -->
@@ -123,3 +123,8 @@
   </body>
 </html>
 
+<script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "67%" 
+        }
+</script>

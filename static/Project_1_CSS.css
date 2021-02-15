@@ -56,30 +56,66 @@ Wings Section Start
   filter: brightness(100%);
 }
 
-@media screen and (max-width: 1870px) {
+
+
+@media screen and (max-width: 1320px){
+
   #Left_GL {
     visibility: hidden;
+    
   }
   #Right_GL {
     visibility: hidden;
   }
-
+  
   #Crown_Pic img {
     visibility: visible;
-    width: 300px;
+    width: 250px;
     position: absolute;
-    top: 3%;
-    left: 35%;
+    top: -4.5%;
+    left: 34.5%;
     filter: drop-shadow(0px 10px 12px gold);
-    transform:scale(.75);
+    transform:scale(.65);
+    
   }
   
+}
+
+
+@media screen and (max-width: 1600px) and (min-width: 1325px){
+
+  #Left_GL {
+    visibility: visible;
+    position: absolute;
+    top: 33%;
+    left: 18%;
+    filter: drop-shadow(0px 10px 12px gold);
+    transform:scale(1.5,2);
+    
+  }
+  #Right_GL {
+    visibility: visible;
+    position: absolute;
+    top: 33%;
+    left: 71%;
+    filter: drop-shadow(0px 10px 12px gold);
+    transform:scale(1.5,2);
+  }
   
-  
+  #Crown_Pic img {
+    visibility: visible;
+    width: 225px;
+    position: absolute;
+    top: -2.5%;
+    left: 42.5%;
+    filter: drop-shadow(0px 10px 12px gold);
+    transform:scale(.75);
+    
+  }
   
 }
-  
-  
+
+
 @media screen and (min-width: 1878px) {
   #Left_GL {
     position: absolute;
@@ -127,7 +163,7 @@ Glass Panel Start
 #Glass_Player_Wrapper {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)  scale(.60);
+  transform: translate(-50%, -48%)  scale(.60);
   position: fixed;
   width: 800px;
   height: 900px;

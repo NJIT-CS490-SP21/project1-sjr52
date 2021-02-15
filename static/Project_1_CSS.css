@@ -51,7 +51,6 @@ Wings Section Start
 
 #Left_GL,
 #Right_GL {
-  transform: scale(2);
   opacity: 1;
   z-index: 1;
   filter: brightness(100%);
@@ -59,50 +58,42 @@ Wings Section Start
 
 @media screen and (max-width: 1870px) {
   #Left_GL {
-    visibility: visible;
+    visibility: hidden;
   }
   #Right_GL {
-    visibility: visible;
+    visibility: hidden;
   }
 
   #Crown_Pic img {
     visibility: visible;
     width: 300px;
     position: absolute;
-    top: 4.5%;
-    left: 40%;
+    top: 3%;
+    left: 35%;
     filter: drop-shadow(0px 10px 12px gold);
+    transform:scale(.75);
   }
   
-  #Lyrics_Link{
-  position: absolute;
-  top: 69%;
-  left: 48%;
-  letter-spacing:2px;
-  background:red;
-  z-index: 4;
-  font-size:15px;  
-  text-decoration: none;
-  text-transform:uppercase;
   
-  }
+  
+  
 }
   
   
 @media screen and (min-width: 1878px) {
   #Left_GL {
     position: absolute;
-    top: 39%;
-    left: 27%;
-    transform:scale(2,3);
+    top: 36%;
+    left: 25%;
+    transform:scale(1.5,2);
     filter: drop-shadow(10px 10px 12px gold);
   }
 
   #Right_GL {
     position: absolute;
-    top: 39%;
-    left: 67%;
-    transform:scale(2,3);
+    top: 36%;
+    left: 65%;
+    transform:scale(1.5,2);
     filter: drop-shadow(10px 10px 12px gold);
   }
   #Crown_Pic img {
@@ -110,8 +101,10 @@ Wings Section Start
     width:300px;
     position: absolute;
     top: 3%;
-    left: 44.5%;
+    left: 42%;
     filter: drop-shadow(0px 10px 12px gold);
+    transform:scale(.75);
+    
   }
 }
 
@@ -134,7 +127,7 @@ Glass Panel Start
 #Glass_Player_Wrapper {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)  scale(.60);
   position: fixed;
   width: 800px;
   height: 900px;
@@ -142,7 +135,7 @@ Glass Panel Start
   border-radius: 10px;
   z-index: 1;
 }
-/*background: rgba(255, 255, 255, 0.2);
+/*
 =========================
 Glass Panel End
 =========================
@@ -399,8 +392,8 @@ audio{
 /*Lyrics_Area - START*/
 #Lyrics_Link{
   position: absolute;
-  top: 69%;
-  left: 48%;
+  top: 80%;
+  left: 42%;
   letter-spacing:2px;
   background:red;
   z-index: 4;

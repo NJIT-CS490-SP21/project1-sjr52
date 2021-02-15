@@ -105,18 +105,19 @@
        <img src="https://res.cloudinary.com/ddsomtotk/image/upload/v1612802629/FireBurn-Pic-uvz5ud-unscreen_fvktbd.gif" id="RB_Fire" alt="Right_Bottom_Fire" height="250px" width="300px"></img>
      </div>
    <!--====================================================Fire SECTION - END ===============================================================================================-->
-    </div>
-  <!--====================================================CENTRAL WRAPPER SECTION - END ===============================================================================================-->
-  <!--====================================================Display Lyrics SECTION - START ===============================================================================================-->
+   <!--====================================================Display Lyrics SECTION - START ===============================================================================================-->
    <!--<a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics</a>   -->
    
-   {% if Track_Lyrics_Check %}
-      <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics!</a>  
-   {% else %}
-      <a href='#{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics Not Able!</a> 
-   {% endif %}
+     {% if Track_Lyrics_Check %}
+        <a href='{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics!</a>  
+     {% else %}
+        <a href='#{{Track_Lyrics_Link}}' id="Lyrics_Link" target='_blank'>Lyrics Not Able!</a> 
+     {% endif %}
    
    
   <!--====================================================Display Lyrics SECTION - END ===============================================================================================-->
+   
+    </div>
+  <!--====================================================CENTRAL WRAPPER SECTION - END ===============================================================================================-->
   </body>
 </html>

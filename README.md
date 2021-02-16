@@ -3,12 +3,13 @@
 ## Table of Contents
 
 1. Technologies, Frameworks, Libraries and API
-2. Structure and Location of directory and files
-3. Creating (Spotify and Genius Account) and (Hiding API KEYS) 
-4. Setting up - Python File
-5. Setting Up - HTML and CSS File
-6. Heroku Deployment
-7. Technical Issues and Solutions
+2. Installing Packages
+3. Structure and Location of directory and files
+4. Creating (Spotify and Genius Account) and (Hiding API KEYS) 
+5. Setting up - Python File
+6. Setting Up - HTML and CSS File
+7. Heroku Deployment
+8. Technical Issues and Solutions
 
 ***
 # __1.) Technologies, Frameworks, Libraries and API :__
@@ -31,7 +32,26 @@
             -Genius API: Used to obtain lyrics of a song
 ***
 
-# __2.) Project Structure :__
+# __2.) Installing Packages :__
+      
+      ## -flask:
+        -In terminal type the following command: 
+            -`sudo pip install Flask` or `pip install Flask`
+            
+      ## -requests:
+        -In terminal type the following command: 
+            -`sudo pip install Requests` or `pip install Requests`
+            
+      ## -python-dotenv:
+        -In terminal type the following command: 
+            -`sudo pip install -U python-dotenv` or `pip install -U python-dotenv`
+    
+      ## -heroku:
+        -In terminal type the following command: 
+            -`npm install -g heroku`
+***
+
+# __3.) Project Structure :__
     
       ## Step 1: Creating a AWS Educate Account and Getting Started with Cloud 9:
       
@@ -66,7 +86,7 @@
                      - command: `touch CSS_File_Name.html`
 ***
 
-# __3.) Creating a Spotify and Genius Account for API Keys :__
+# __4.) Creating a Spotify and Genius Account for API Keys :__
     
       ## Step 1.) Creating a Spotify Account :
             - Go To (https://developer.spotify.com/dashboard/login):
@@ -92,7 +112,7 @@
               
 ***
 
-# __4.) Setting up - Main Python File :__
+# __5.) Setting up - Main Python File :__
   
       ## Step 1.) Importing Libraries on top of the main python file(Importance of Each library is stated earlier):
             - import requests
@@ -188,7 +208,7 @@
                    
 ***
 
-# __5.) Setting up - HTML AND CSS Files :__
+# __6.) Setting up - HTML AND CSS Files :__
      
       ## Step 1.) To use values that we passed in the render_template of the python file in HTML file view the syntax below:
             ex.  `<h1>{{Track Name Picked}}</h1>`
@@ -200,7 +220,7 @@
                     
             -For the styling of the web page you can design it however you like!
 ***  
-# __6.) Heroku Deployment :__
+# __7.) Heroku Deployment :__
     
       ## Step 1.) Installing Heroku via your AWS terminal :
             ex. Command: `npm install -g heroku`
@@ -254,7 +274,7 @@
                 
 *** 
 
-# __7.) Technical Issues and Solutions:__
+# __8.) Technical Issues and Solutions:__
    
     ## Fixed Problems:
         

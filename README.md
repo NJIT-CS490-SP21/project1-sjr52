@@ -12,26 +12,26 @@
 
 ***
 # __1.) Technologies, Frameworks, Libraries and API :__
-    __-Technologies:__
+    ##-Technologies:
         -AWS Cloud9 IDE: Used for coding in PYTHON, HTML and CSS
-    __-Frameworks:__
+    ##-Frameworks:
         -Python(Flask): Used for Creating a WEB SERVER
-    __-Libraires:__
+    ##-Libraires:
         -Requests: Used to send POST and GET request to Spotify and Genius.
         -os and dotenv: Used to export hidden .env file which contained API Key. 
         -json: Used for Parsing response recieved from Spotify and Genius.
         -random: Used to dynamically fetch and generate random track information on webpage.
         -render_template: Used to pass parameters to HTML file.
-    __-API:__
+    ##-API:
         -Spotify API: Used to obtain artist name, song name, song picture, and preview link.
         -Genius API: Used to obtain lyrics of a song
 ***
 
 # __2.) Project Structure :__
-    __Step 1: Creating a AWS Educate Account and Getting Started with Cloud 9:__
+    ##Step 1: Creating a AWS Educate Account and Getting Started with Cloud 9:
         -AWS Educate Account (https://aws.amazon.com/education/awseducate/)
         -After you have created the account, on the top there is a search-bar where you should type cloud9 and it will load cloud9 IDE. 
-    __Step 2: Creating Project Files:__
+    ##Step 2: Creating Project Files:
         1.) Create a Main Working Directory:
             - command: `mkdir directory_name`
             
@@ -58,7 +58,7 @@
 ***
 
 # __3.) Creating a Spotify and Genius Account for API Keys :__
-    # __Step 1.) Creating a Spotify Account :__
+    ##Step 1.) Creating a Spotify Account :
         - Go To (https://developer.spotify.com/dashboard/login):
         - Click on "Sign up" 
         
@@ -70,7 +70,7 @@
               - **ex. export CLIENT_ID ='ENTER THE CLIENT ID OBTAINED FROM SPOTIFY'**
               - **ex. export CLIENT_SECRET='ENTER THE CLIENT SECRET OBTAINED FROM SPOTIFY'**
              
-    # __Step 2.) Creating a Genius Account :__
+    ##Step 2.) Creating a Genius Account :
         - Go To (https://genius.com/developers):
         - Click on "Sign up" 
         
@@ -82,8 +82,8 @@
           
 ***
 
-# __4.) Setting up - (Main Python File) :__
-    # __Step 1.) Importing Libraries on top of the main python file(Importance of Each library is stated earlier):__
+# __4.) Setting up - (Main Python File) :
+    ##Step 1.) Importing Libraries on top of the main python file(Importance of Each library is stated earlier):__
         - import requests
         - import os
         - import json
@@ -91,20 +91,20 @@
         - from flask import Flask, render_template
         - from dotenv import load_dotenv, find_dotenv
         
-    # __Step 2.) finding and loading .env file:__
+    ##Step 2.) finding and loading .env file:
         - Type this exactly in your main python file:
             - `load_dotenv(find_dotenv()` //this will import the API Keys to the main python file.
         
-    # __Step 3.) Setting up Flask App:__  
+    ##Step 3.) Setting up Flask App:  
         - Follow the steps exactly:
             1.) ` app = Flask(__name__)`  #//instance of flask named app      
             2.) `@app.route('/')`         #//End point to load the webpage
             
-    # __Step 4.) Create a Function Called `Display_Content()` and inside that function follow these steps below:__
+    ##Step 4.) Create a Function Called `Display_Content()` and inside that function follow these steps below:__
         
-        __!!! DO STEPS 1-3 INSIDE THE FUNCTION !!!__
+        ##!!! DO STEPS 1-3 INSIDE THE FUNCTION !!!
         
-        - Authentication from Spotify using Post Method: 
+        ##- Authentication from Spotify using Post Method: 
         
             - In order to fetch data from Spotify we first have to obtain a access token using the requests.post() method.
             
@@ -126,9 +126,9 @@
                  ex. `Access_Token = Auth_Response.json()['access_token']`
                  
                 
-        - Fetching Artist Tracks, Track Pics and Track Preview based on Artist ID using GET Method:
+        ##- Fetching Artist Tracks, Track Pics and Track Preview based on Artist ID using GET Method:
         
-            __Step 1.) Store a list of your Favorite Artist IDs:__
+            ##Step 1.) Store a list of your Favorite Artist IDs:
             
                  - To obtain the Artist ID go to Spotify then search up your favorite artist. After you have done that the URL would look similar to the one below:
                      ex. 'https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ'
@@ -138,7 +138,7 @@
                  - Store these artist ids in a python list which will later be used to fetch songs from a specific artist
                  
                 
-            __Step 2.) Sending a GET Request to get top tracks for a specific artist id:__
+            ##Step 2.) Sending a GET Request to get top tracks for a specific artist id:
             
                 - Target URL for Get Request:
                  
@@ -162,42 +162,42 @@
                    ex. `Final_Data = GET_Response_Data.json()` 
                  
         
-            __Step 3.) Passing Extracted data to HTML:__
+            ##Step 3.) Passing Extracted data to HTML:
             
                 -In the function do the following:
                 
                     `return render_template(PASS ANY EXTRACTED INFO YOU WOULD LIKE TO DISPLAY ON HTML PAGE)`
                     
-            __!!!DO Step 4 OutSide the function!!!__
+            ##!!!DO Step 4 OutSide the function!!!
                     
             
-            __Step 4.) Defining Port and IP to run the web app. Copy the below stated code exactly the same:__
+            ##Step 4.) Defining Port and IP to run the web app. Copy the below stated code exactly the same:
             
                 ex. `app.run(port=int(os.getenv('PORT', 8080)), host=os.getenv('IP','0.0.0.0')`
                
 ***
 
 # __5.) Setting up - HTML AND CSS Files :__
-    # __Step 1.) To use values that we passed in the render_template of the python file in HTML__
+     ##Step 1.) To use values that we passed in the render_template of the python file in HTML__
         ex.  `<h1>{{Track Name Picked}}</h1>`
                 
         -For the structure of the web page you can design it however you like!
             
-    # __Step 2.) We then can link a CSS file to the html file using the link tag in the header section:__ 
+     ##Step 2.) We then can link a CSS file to the html file using the link tag in the header section:__ 
         ex.  `<link href={{url_for('static', filename='Name_OF_CSS_File')}} rel="stylesheet" />`
                 
         -For the styling of the web page you can design it however you like!
 ***  
 # __6.) Heroku Deployment :__
     
-    # __Step 1.) Installing Heroku via your AWS terminal :__
+    ##Step 1.) Installing Heroku via your AWS terminal :__
         ex. Command: `npm install -g heroku`
                 
-    # __Step 2.) Creating a Heroku Account:__
+    ##Step 2.) Creating a Heroku Account:__
         -Go to `https://signup.heroku.com/`
         -Sign up by inputing the information
     
-    # __Step 3.) Creating `requirements.txt` and `Procfile`:__
+    ##Step 3.) Creating `requirements.txt` and `Procfile`:__
         -In your root directory do the following to create requirements.txt file:
             1.) command: `touch requirements.txt`         //Will create a requirements.txt file
             2.) command: `pip freeze > requirements.txt`  //Will copy all the packages used in project creation into requirements.txt file      
@@ -208,7 +208,7 @@
             3.) Inside the Procfile write the following command: //Will tell heroku to run the following command when deploying the webpage on web
                 ex. `web: python (Your_Python_File_Name.py)`
             
-    # __Step 4.) Launching the Web App with Heroku:__
+    ##Step 4.) Launching the Web App with Heroku:__
         
         Step 1.) Log into Heroku via Command line:
             - Type the following command in the cloud-9 terminal:
@@ -234,19 +234,20 @@
 
 # __7.) Technical Issues and Solutions:__
    
-    Problem #1) I was having problems reflecting the changes I made to CSS file display onto the webpage, I checked everything from CSS syntax to filename being correctly referenced in the HTML file, but the problem was that the old CSS file was being cached. I even tried to do a hard refresh but it didn't work. For the Temporaray, I was changing the CSS filename so that each time a new css filename was cached. After Trying out many things the problem still remained and after few days into the project the (TA: DAVID) shared with us a single line of code which solved the problem: `app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0`.
-    Problem #2.) I was trying to make my project more creative and more appealing but for that I needed to download pictures on my computer and style them myself. After styling and finalizing all the pictures I hit a road block when I tried to access the pictures loacted on my computer from cloud 9. I also tried to upload the pictures into the cloud 9 enviorment but still it did not let me use the pictures. I spent a whole day figuring out how I would inculcate the custom pictures into my webpage and then I thought of hosting a picture on cloudinary.com and using them via adding a source attribute in the image tag.
-    Problem #3.) I was not able to load the Client id and Client Secret id  from my .env file. I tried changing the variable names inside the file but it still didn't work I even tried changing the name of the .env file to .env_one and etc. but it still didn't work. Then I thought it might be cloud 9 problem and after restarting it, the .env file started working.
-    Problem #4.) When I recieved the data and turned it into Json form, I was having alot of problem extract information and it would always give me some sort of an error such as a index error and many more. In order to solve this problem I copied the Json format from the terminal and used an online JSON Formatter & Validator.
-    Problem #5.) Another problem which I faced was that most of the times I was not gettting a response from the request I was sending to Genius, I often recieved a response 401 or response 403 error, to solve this I printed out the track names and then I found out that many times the track name was accompanied by parentheses which had other information inside it such as feat... and much more, this was messing up my search, so I used a split function and extracted only the track name and now about 90 percent of the tracks have a accurate lyrics.
+    ##Fixed Problems:
+        Problem #1) I was having problems reflecting the changes I made to CSS file display onto the webpage, I checked everything from CSS syntax to filename being correctly referenced in the HTML file, but the problem was that the old CSS file was being cached. I even tried to do a hard refresh but it didn't work. For the Temporaray, I was changing the CSS filename so that each time a new css filename was cached. After Trying out many things the problem still remained and after few days into the project the (TA: DAVID) shared with us a single line of code which solved the problem: `app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0`.
+        Problem #2.) I was trying to make my project more creative and more appealing but for that I needed to download pictures on my computer and style them myself. After styling and finalizing all the pictures I hit a road block when I tried to access the pictures loacted on my computer from cloud 9. I also tried to upload the pictures into the cloud 9 enviorment but still it did not let me use the pictures. I spent a whole day figuring out how I would inculcate the custom pictures into my webpage and then I thought of hosting a picture on cloudinary.com and using them via adding a source attribute in the image tag.
+        Problem #3.) I was not able to load the Client id and Client Secret id  from my .env file. I tried changing the variable names inside the file but it still didn't work I even tried changing the name of the .env file to .env_one and etc. but it still didn't work. Then I thought it might be cloud 9 problem and after restarting it, the .env file started working.
+        Problem #4.) When I recieved the data and turned it into Json form, I was having alot of problem extract information and it would always give me some sort of an error such as a index error and many more. In order to solve this problem I copied the Json format from the terminal and used an online JSON Formatter & Validator.
+        Problem #5.) Another problem which I faced was that most of the times I was not gettting a response from the request I was sending to Genius, I often recieved a response 401 or response 403 error, to solve this I printed out the track names and then I found out that many times the track name was accompanied by parentheses which had other information inside it such as feat... and much more, this was messing up my search, so I used a split function and extracted only the track name and now about 90 percent of the tracks have a accurate lyrics.
         
     
-    Problems Unsolved:
+    ##Problems Unsolved:
         -Sometimes when you try to load the webpage it does not appear, but after you log out of AWS and then log back in and try again it would appear.
         -One Problem with my project is that sometimes if the track name is long it overflows a little.
     
     
-    Further Improvement On Project:
+    ##Further Improvement On Project:
         -I am planning on adding a recommended songs list for a specific artist as well as planning on adding other artist who may have traits similar to the current artist that might be playing.
         -I am also planning on making the webpage interactive by adding a favorite list, where the user can store there favorite artist and a list of their tracks which they like.
         -I would also like to improve the webpage by making different UI and allowing users to choose those UI's based on their liking.
